@@ -1,10 +1,10 @@
 import React from "react";
-import { RootState } from "../../app/store";
+import { AppState } from "../../app/store";
 import { useSelector, useDispatch } from "react-redux";
 import { decrement, increment } from "./counterSlice";
 
-export function Counter() {
-	const count = useSelector((state: RootState) => state.counter.value);
+function Counter() {
+	const count = useSelector((state: AppState) => state.counter.value);
 	const dispatch = useDispatch();
 
 	return (
@@ -21,3 +21,5 @@ export function Counter() {
 		</div>
 	);
 }
+
+export default Counter;
