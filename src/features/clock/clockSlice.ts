@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 
-import type { AppState, AppThunk } from "../../app/store";
+import type { AppState, AppThunk } from "@/app/store";
 
 export interface ClockState {
 	lastUpdate: number;

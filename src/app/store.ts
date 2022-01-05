@@ -1,7 +1,7 @@
 import { Action, combineReducers, configureStore, ThunkAction } from "@reduxjs/toolkit";
 
-import counterReducer from "../features/counter/counterSlice";
-import clockReducer from "../features/clock/clockSlice";
+import counterReducer from "@/features/counter/counterSlice";
+import clockReducer from "@/features/clock/clockSlice";
 
 import { createWrapper } from "next-redux-wrapper";
 
