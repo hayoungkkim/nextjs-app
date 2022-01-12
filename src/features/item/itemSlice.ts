@@ -1,27 +1,12 @@
 import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
+import { IItem } from "@/entities/item";
 
 import type { AppState } from "@/app/store";
 
-export interface ItemState {
-	itemId: string;
-	itemName: string;
-	brandName?: string;
-	itemLink?: string;
-	strikeOutPrice?: string;
-	displayPrice?: string;
-	isAdultItem?: boolean;
-	ItemImages?: [
-		{
-			itemId: number;
-			src: string;
-		}
-	];
-}
-
 export interface ItemsState {
-	itemList?: ItemState[];
+	itemList?: IItem[];
 	status: "idle" | "loading" | "failed";
 }
 
