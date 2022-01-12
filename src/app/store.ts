@@ -2,12 +2,14 @@ import { Action, combineReducers, configureStore, ThunkAction } from "@reduxjs/t
 
 import counterReducer from "@/features/counter/counterSlice";
 import clockReducer from "@/features/clock/clockSlice";
+import itemReducer from "@/features/item/itemSlice";
 
 import { createWrapper } from "next-redux-wrapper";
 
 const rootReducer = combineReducers({
 	counter: counterReducer,
 	clock: clockReducer,
+	item: itemReducer,
 });
 
 export const makeStore = () => {
