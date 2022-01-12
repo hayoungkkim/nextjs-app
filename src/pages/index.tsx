@@ -4,6 +4,8 @@ import { useAppSelector } from "@/app/hook";
 import { getItems, selectItem } from "@/features/item/itemSlice";
 import { ItemCard } from "@/features/item/ItemCard";
 
+import { Box } from "@chakra-ui/react";
+
 const Home: NextPage = () => {
 	const { itemList } = useAppSelector(selectItem);
 
@@ -12,6 +14,7 @@ const Home: NextPage = () => {
 			{itemList?.map((item) => (
 				<ItemCard key={item.itemId} item={item} />
 			))}
+			<Box>123</Box>
 		</>
 	);
 };
