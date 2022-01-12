@@ -1,9 +1,9 @@
-import axios from "axios";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { HYDRATE } from "next-redux-wrapper";
 import { IItem } from "@/entities/item";
 
 import type { AppState } from "@/app/store";
+import network from "@/network";
 
 export interface ItemsState {
 	itemList?: IItem[];
@@ -16,8 +16,8 @@ const initialState: ItemsState = {
 };
 
 export const getItems = createAsyncThunk("item/getItems", async () => {
-	const response = await axios.get("http://localhost:3065/api/items");
-	return response.data;
+	const itemData = await network.item().fetchItem();
+	return itemData;
 });
 
 export const itemSlice = createSlice({
