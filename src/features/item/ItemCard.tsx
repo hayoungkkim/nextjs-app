@@ -40,7 +40,14 @@ export const ItemCard = (props: Props) => {
 				<Button colorScheme="blue" isFullWidth>
 					Add to cart
 				</Button>
-				<Link href={itemLink ?? "#"} passHref>
+				<Link
+					href={{
+						pathname: "/detail",
+						query: { item: JSON.stringify(item) },
+					}}
+					as={`/detail/${item.itemId}`}
+					passHref
+				>
 					<ChakraLink textDecoration="underline" fontWeight="medium" color={useColorModeValue("gray.600", "gray.400")}>
 						Quick shop
 					</ChakraLink>
