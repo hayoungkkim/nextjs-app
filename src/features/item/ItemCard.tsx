@@ -42,10 +42,9 @@ export const ItemCard = (props: Props) => {
 				</Button>
 				<Link
 					href={{
-						pathname: "/detail",
-						query: { item: JSON.stringify(item) },
+						pathname: "/item/[itemId]",
+						query: { itemId: item.itemId },
 					}}
-					as={`/detail/${item.itemId}`}
 					passHref
 				>
 					<ChakraLink textDecoration="underline" fontWeight="medium" color={useColorModeValue("gray.600", "gray.400")}>

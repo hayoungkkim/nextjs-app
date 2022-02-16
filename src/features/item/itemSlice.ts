@@ -16,7 +16,11 @@ const initialState: ItemsState = {
 };
 
 export const getItems = createAsyncThunk("item/getItems", async () => {
-	const itemData = await network.item().fetchItem();
+	const itemData = await network.item().fetchItems();
+	return itemData;
+});
+export const getItem = createAsyncThunk("item/getItem", async (itemId: number) => {
+	const itemData = await network.item().fetchItem(itemId);
 	return itemData;
 });
 
